@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:retinopathy/screens/Login.dart';
+import 'package:retinopathy/screens/registration.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -11,11 +13,26 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   String img_location = 'assets/Images/info.jpg';
   String Userid= FirebaseAuth.instance.currentUser.uid;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),backgroundColor: Color.fromARGB(150, 79, 230, 202),
+          actions: [
+      Center(
+      child: InkWell(
+      onTap: () {
+        
+    },
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text('logout', style: TextStyle(fontSize: 20.0)),
+      ),
+    ),
+    ),
+    ]
       ),
       body: Container(
           decoration: BoxDecoration(
